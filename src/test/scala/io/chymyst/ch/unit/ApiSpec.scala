@@ -93,7 +93,7 @@ class ApiSpec extends LawChecking {
 
     f1(123)("q")(true) shouldEqual 123
     f1("abc")(Some((1, 1)))(Map()) shouldEqual "abc"
-    f1(true)(123.0)('blah) shouldEqual true
+    f1(true)(123.0)(sym"blah") shouldEqual true
   }
 
   it should "generate correct code for the identity function on a=>b" in {
@@ -109,7 +109,7 @@ class ApiSpec extends LawChecking {
 
     f1("b")(123)("q")(true) shouldEqual 123
     f1(Some((3, 4)))("abc")(Some((1, 1)))(Map()) shouldEqual "abc"
-    f1(0.0)(true)(123.0)('blah) shouldEqual true
+    f1(0.0)(true)(123.0)(sym"blah") shouldEqual true
   }
 
   it should "generate correct code for the identity function with explicit arguments" in {
